@@ -32,3 +32,18 @@ function processValue(value: string | number): number {
         return value * 2;
     }
 }
+
+
+
+interface Product {
+    name: string;
+    price: number;
+}
+
+function getMostExpensiveProduct(products: Product[]): Product | null {
+    if (!products) {
+        return null;
+    }
+    const sortedProducts: Product[] = products.sort((a: Product, b: Product) => b.price - a.price);
+    return sortedProducts[0]; 
+}
