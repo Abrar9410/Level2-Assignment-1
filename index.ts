@@ -3,4 +3,13 @@ function formatString(input: string, toUpper?: boolean): string {
         return input.toUpperCase();
    }
    return input.toLowerCase(); 
-}
+};
+
+
+
+type Item = { title: string; rating: number };
+
+function filterByRating(items: Item[]): Item[] {
+    const filteredItems: Item[] = items.filter((item: Item) => item.rating >= 4);
+    return filteredItems;
+};
