@@ -21,3 +21,14 @@ function concatenateArrays<T>(...arrays: T[][]): T[] {
     arrays.map((array: T[]) => concatenatedArray.push(...array));
     return concatenatedArray;
 }
+
+
+
+function processValue(value: string | number): number {
+    if (typeof value === "string") {
+        return value.length;
+    }
+    if (typeof value === "number") {
+        return value * 2;
+    }
+}
