@@ -7,10 +7,9 @@ function formatString(input: string, toUpper?: boolean): string {
 
 
 
-type Item = { title: string; rating: number };
 
-function filterByRating(items: Item[]): Item[] {
-    const filteredItems: Item[] = items.filter((item: Item) => item.rating >= 4);
+function filterByRating(items: { title: string; rating: number }[]): { title: string; rating: number }[] {
+    const filteredItems: { title: string; rating: number }[] = items.filter((item: { title: string; rating: number }) => item.rating >= 4);
     return filteredItems;
 };
 
@@ -24,12 +23,41 @@ function concatenateArrays<T>(...arrays: T[][]): T[] {
 
 
 
+class Vehicle {
+    private make: string;
+    private year: number;
+    constructor(make: string, year: number) {
+        this.make = make;
+        this.year = year;
+    }
+    getInfo() {
+        return `Make: ${this.make}, Year: ${this.year}`;
+    }
+}
+
+class Car extends Vehicle {
+    private model: string;
+    constructor(make: string, year: number, model: string) {
+        super(make, year);
+        this.model = model;
+    }
+    getModel() {
+        return `Model: ${this.model}`;
+    }
+}
+
+
+
+
 function processValue(value: string | number): number {
     if (typeof value === "string") {
         return value.length;
     }
-    if (typeof value === "number") {
+    else if (typeof value === "number") {
         return value * 2;
+    }
+    else {
+        return 0;
     }
 }
 
