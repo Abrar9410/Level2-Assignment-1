@@ -1,8 +1,8 @@
 function formatString(input: string, toUpper?: boolean): string {
-   if (toUpper === true || undefined) {
+    if (toUpper === true || undefined) {
         return input.toUpperCase();
-   }
-   return input.toLowerCase(); 
+    }
+    return input.toLowerCase();
 };
 
 
@@ -73,7 +73,7 @@ function getMostExpensiveProduct(products: Product[]): Product | null {
         return null;
     }
     const sortedProducts: Product[] = products.sort((a: Product, b: Product) => b.price - a.price);
-    return sortedProducts[0]; 
+    return sortedProducts[0];
 }
 
 
@@ -93,4 +93,20 @@ function getDayType(day: Day): string {
         return "Weekend";
     }
     return "Weekday";
+}
+
+
+
+async function squareAsync(n: number): Promise<number> {
+    await new Promise((resolve, reject) => {
+        if (n >= 0) {
+            setTimeout(() => {
+                resolve(n);
+            }, 1000);
+        }
+        else {
+            reject("Negative numbers not allowed");
+        }
+    })
+    return n * n;
 }
