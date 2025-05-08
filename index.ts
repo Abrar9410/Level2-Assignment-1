@@ -75,3 +75,22 @@ function getMostExpensiveProduct(products: Product[]): Product | null {
     const sortedProducts: Product[] = products.sort((a: Product, b: Product) => b.price - a.price);
     return sortedProducts[0]; 
 }
+
+
+
+enum Day {
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday
+}
+
+function getDayType(day: Day): string {
+    if (day === Day.Saturday || day === Day.Sunday) {
+        return "Weekend";
+    }
+    return "Weekday";
+}
