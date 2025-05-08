@@ -1,3 +1,4 @@
+
 function formatString(input: string, toUpper?: boolean): string {
     if (toUpper === true || undefined) {
         return input.toUpperCase();
@@ -15,11 +16,13 @@ function filterByRating(items: { title: string; rating: number }[]): { title: st
 
 
 
+
 function concatenateArrays<T>(...arrays: T[][]): T[] {
     const concatenatedArray: T[] = [];
     arrays.map((array: T[]) => concatenatedArray.push(...array));
     return concatenatedArray;
 }
+
 
 
 
@@ -63,6 +66,7 @@ function processValue(value: string | number): number {
 
 
 
+
 interface Product {
     name: string;
     price: number;
@@ -75,6 +79,7 @@ function getMostExpensiveProduct(products: Product[]): Product | null {
     const sortedProducts: Product[] = products.sort((a: Product, b: Product) => b.price - a.price);
     return sortedProducts[0];
 }
+
 
 
 
@@ -94,6 +99,7 @@ function getDayType(day: Day): string {
     }
     return "Weekday";
 }
+
 
 
 
