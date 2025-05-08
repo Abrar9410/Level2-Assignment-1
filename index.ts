@@ -1,6 +1,6 @@
 
 function formatString(input: string, toUpper?: boolean): string {
-    if (toUpper === true || undefined) {
+    if (toUpper === true || toUpper === undefined) {
         return input.toUpperCase();
     }
     return input.toLowerCase();
